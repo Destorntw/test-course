@@ -3,7 +3,7 @@ ReplicaCount: 3
 containers:
   containerPort: 8080
   image: 'quay.io/hamir/course-test/courset'
-  tag: 'chart_v1'
+  tag: 'chart_v2'
 
 service:
   servicePort: 8080
