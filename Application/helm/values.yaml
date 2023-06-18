@@ -2,7 +2,7 @@ ReplicaCount: 3
 
 containers:
   containerPort: 8080
-  image: 'quay.io/<quay-userName>/<imageName>:v2'
+  image: 'quay.io/hamir/corse-test/courset:v2'
   tag: 'base'
 
 service:
