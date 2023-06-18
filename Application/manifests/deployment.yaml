@@ -2,29 +2,29 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
 # set your lab user name
-  name: {{ .Release.Name}}
+  name: user1-hello-world
 spec:
-  replicas: {{ .Values.ReplicaCount }}
+  replicas: 3
   selector:
     matchLabels:
 # set your lab user name
-      app: {{ .Release.Name }}
+      app: user1-hello-world
   template:
     metadata:
       labels:
 # set your lab user name
-        app: {{ .Release.Name }}
+        app: user1-hello-world
     spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
-          name: {{ .Release.Name }}
+          name: hello-world
           ports:
-            - containerPort: {{ .Values.containers.containerPort }}
+            - containerPort: 8080
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
-          image: {{ .Values.containers.Image }}:{{ .Values.containers.tag }}
+          image: 'quay.io/hamir/course-test/courset:v2'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
